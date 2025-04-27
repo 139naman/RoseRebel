@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoseRebel | Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="fade-in">
+  <div class="nav-container container">
+    <img src="images/logo.png" alt="RoseRebel Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html" class="active">Cart (<span class="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="cart-section container fade-in">
+  <h2>Your Shopping Cart</h2>
+  <div id="cart-items"></div>
+  <p class="total-price">Total: ₹<span id="cart-total">0</span></p>
+  <button onclick="proceedToPayment()">Proceed to Payment</button>
+</section>
+
+<footer class="fade-in">
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoseRebel | Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="fade-in">
+  <div class="nav-container container">
+    <img src="images/logo.png" alt="RoseRebel Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="payment-section container fade-in">
+  <h2>Checkout</h2>
+  
+  <form id="checkout-form" action="https://formspree.io/f/xanonvea" method="POST">
+    <input type="text" name="Full Name" placeholder="Full Name" required>
+    <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+    <textarea name="Address" rows="4" placeholder="Full Address" required></textarea>
+    <input type="text" name="City" placeholder="City" required>
+    <input type="text" name="State" placeholder="State" required>
+    <input type="text" name="Pincode" placeholder="Pincode" required>
+
+    <!-- No payment select needed! -->
+    <input type="hidden" name="Payment Method" value="Cash on Delivery">
+
+    <!-- Hidden field to pass cart data -->
+    <input type="hidden" name="Cart Summary" id="cart-summary">
+
+    <button type="submit">Place Order (Cash on Delivery)</button>
+  </form>
+
+  <div id="confirmation" style="display:none; margin-top: 30px;">
+    <h3>Thank you for your order!</h3>
+    <p>We have received your details and will process your order soon.</p>
+  </div>
+</section>
+
+<footer class="fade-in">
+  <p>&copy; 2025 RoseRebel. Crafted with Elegance.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('checkout-form');
+  const cartSummaryField = document.getElementById('cart-summary');
+
+  form.addEventListener('submit', function(e) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const summary = cart.map(item => `${item.name} (x${item.quantity}) - ₹${item.price * item.quantity}`).join(', ');
+    cartSummaryField.value = summary;
+    localStorage.removeItem('cart');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoseRebel | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="fade-in">
+  <div class="nav-container container">
+    <img src="images/logo.png" alt="RoseRebel Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+        <li><a href="contact.html">Raise Query</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-banner fade-in">
+  <img src="images/banner1.jpg" alt="Hero Banner" class="hero-image">
+</section>
+
+<section class="products-grid container fade-in" id="products">
+  <div class="product-card">
+    <img src="images/jacket1.jpg" alt="Denim Shirt">
+    <h3>Selvedge Denim Shirt- Black</h3>
+    <p>₹4599</p>
+    <button onclick="addToCart('Denim Shirt', 4599)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="images/jacket2.jpg" alt="Leather Jacket">
+    <h3>The Biker Nappa Leather Jacket- Black</h3>
+    <p>₹11000</p>
+    <button onclick="addToCart('Leather Jacket', 11000)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="images/jacket3.jpg" alt="Casual Hoodie">
+    <h3>Selvedge Denim Shirt- Light Blue</h3>
+    <p>₹3999</p>
+    <button onclick="addToCart('Casual Hoodie', 3999)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="images/jacket4.jpg" alt="Casual Hoodie">
+    <h3>The Classic Nappa Leather Jacket- Tan</h3>
+    <p>₹4999</p>
+    <button onclick="addToCart('Casual Hoodie', 3999)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="images/jacket5.jpg" alt="Casual Hoodie">
+    <h3>The Racer Nappa Leather Jacket- Black</h3>
+    <p>₹5499</p>
+    <button onclick="addToCart('Casual Hoodie', 3999)">Add to Cart</button>
+  </div>
+</section>
+
+<footer class="fade-in">
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
